@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 10:17:07 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/07 11:04:54 by tsignore         ###   ########.fr       */
+/*   Created: 2020/07/07 11:12:55 by tsignore          #+#    #+#             */
+/*   Updated: 2020/07/07 11:17:24 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ int	ft_strlen(char *str)
 	return (size);
 }
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	int i;
+	int str_len;
 
 	i = 0;
-	while (i < ft_strlen(str))
+	str_len = ft_strlen(str);
+	while (i < str_len)
 	{
-		if (str[i] < 65 || (str[i] > 90 && str[i] < 97) || str[i] > 122)
+		if (str[i] < 97 || str[i] > 122)
 			return (0);
 		i++;
 	}
