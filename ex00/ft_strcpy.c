@@ -6,12 +6,20 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 13:47:24 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/06 19:05:45 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/08 12:11:09 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	dest = src;
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
