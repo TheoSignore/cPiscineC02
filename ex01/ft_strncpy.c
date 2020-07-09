@@ -6,7 +6,7 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 10:10:48 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/09 08:51:53 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/09 17:26:42 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ int		ft_strlen(char *str)
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
-	unsigned int src_len;
+	unsigned int dst_len;
 
-	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dest);
 	i = 0;
-	while (i < n)
+	while (i < n && src[i] && dest[i])
 	{
-		if (i >= src_len)
-		{
-			dest[i] = '\0';
-		}
-		else
-			dest[i] = src[i];
+		dest[i] = src[i];
+		i++;
+	}
+	while (i <= n && i < dst_len)
+	{
+		dest[i] = '\0';
 		i++;
 	}
 	return (dest);
